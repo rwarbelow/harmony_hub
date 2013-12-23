@@ -2625,3 +2625,255 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
   [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOauthToken (20131223040305)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "oauth_token" character varying(255)[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131223040305"]]
+  [1m[36m (64.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 2]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:04:23 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 124ms (Views: 55.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:24 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:04:24 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:24 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:24 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:24 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 20:04:26 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 20:04:26 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCUJV27PtYWCDNGb3lz9U06rzHj7ipjoeiumI9G6nicLnDuBdCjp3Zz-YqJXThYZQ_B-KKP90lnYYgkiHpmObvA4tOAZ5VHz1tU18fzq9eLVoJP5AK5tEO3C7m0aGfMkB5e8L1T5XtogkgdPL1TbI4B-4Yt5BYyALT-yWgm-Zgi-lgpldGqLENFJnbx5bn7rfEesLRE5NdX4tQdXqMYkGTgAkEVvWA63QP7px9uKh585X3mrdB2ajg697hjoev_7_DDd4zJovNhHfAIv6JKby_0JaHCldgfM_sEOGnLHUyRzDFvbmnq2aY5_-jHaEiH6Es&state=8f5cd4bee022d98e295963f535c98636eb612422077b6582" for 127.0.0.1 at 2013-12-22 20:04:27 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCUJV27PtYWCDNGb3lz9U06rzHj7ipjoeiumI9G6nicLnDuBdCjp3Zz-YqJXThYZQ_B-KKP90lnYYgkiHpmObvA4tOAZ5VHz1tU18fzq9eLVoJP5AK5tEO3C7m0aGfMkB5e8L1T5XtogkgdPL1TbI4B-4Yt5BYyALT-yWgm-Zgi-lgpldGqLENFJnbx5bn7rfEesLRE5NdX4tQdXqMYkGTgAkEVvWA63QP7px9uKh585X3mrdB2ajg697hjoev_7_DDd4zJovNhHfAIv6JKby_0JaHCldgfM_sEOGnLHUyRzDFvbmnq2aY5_-jHaEiH6Es", "state"=>"8f5cd4bee022d98e295963f535c98636eb612422077b6582"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (7.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "oauth_token", "provider", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 23 Dec 2013 04:04:28 UTC +00:00], ["email", "rachelwarbelow@gmail.com"], ["encrypted_password", "$2a$10$O0QZxsZZ1DGJzfqmRefNlObnFfUqHKizPGPSGJt3jHthYhiDO2IuK"], ["name", "Rachel Warbelow"], ["oauth_token", "CAADLvUvOZBr0BAMNVXSFuXVn5qWiDEAHlRegZBgXDi3pBvdHyzbtZBwsitKVhS40ZBn1HXDnlQg9ShWuosDjNZCZCSZCQ480jXPlOy7ZC4hdeyrErIZAPiN8fyAijPFAxknqIDE3oXZCrRQhhyF9RK1n8u3ytg04Sep2xtraMuOhECm2fKHDewBnnMW8ofkQY2aFAZD"], ["provider", "facebook"], ["uid", "6800988"], ["updated_at", Mon, 23 Dec 2013 04:04:28 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 3[0m  [["last_sign_in_at", Mon, 23 Dec 2013 04:04:28 UTC +00:00], ["current_sign_in_at", Mon, 23 Dec 2013 04:04:28 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Mon, 23 Dec 2013 04:04:28 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 415ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:04:28 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:28 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:28 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:04:28 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:28 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:04:28 -0800
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:17:32 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 124ms (Views: 91.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:17:32 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:32 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:32 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:32 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:32 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 20:17:34 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 20:17:34 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCMMC28cFv8fWtWbuvqTOLZ7fGdTYgqqgo7JxQ-dIJUN-ljEtELlVcnDgFIC9jXiOqS02F--5Zlzqgco9hn5cBUuNAjN-N7lNrJORzIc7KHO9cXO8AHWfdiG-U48dY9cA9-Gbn2HV3mu9JPNpGUxgV3BBL-cnfOZsy1CFftqXF0PjFmfYAlal2oqzmoXkQq-bzA7ELqI3uiCYr2sWQpQ9tR62Mi_IHG_HOc_iXrFql20cT-6VxzOhuK09gpfV8OFDWK---48-_kG5F6_XC7dcDoT9DD6hfC55uTR0Tu0Z5UyNl8W8CMzRbSmpK_IJhIJ_8&state=0bc3e4576893d885c3a3f936f17622fc420d79b307874829" for 127.0.0.1 at 2013-12-22 20:17:42 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCMMC28cFv8fWtWbuvqTOLZ7fGdTYgqqgo7JxQ-dIJUN-ljEtELlVcnDgFIC9jXiOqS02F--5Zlzqgco9hn5cBUuNAjN-N7lNrJORzIc7KHO9cXO8AHWfdiG-U48dY9cA9-Gbn2HV3mu9JPNpGUxgV3BBL-cnfOZsy1CFftqXF0PjFmfYAlal2oqzmoXkQq-bzA7ELqI3uiCYr2sWQpQ9tR62Mi_IHG_HOc_iXrFql20cT-6VxzOhuK09gpfV8OFDWK---48-_kG5F6_XC7dcDoT9DD6hfC55uTR0Tu0Z5UyNl8W8CMzRbSmpK_IJhIJ_8", "state"=>"0bc3e4576893d885c3a3f936f17622fc420d79b307874829"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "oauth_token", "provider", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 23 Dec 2013 04:17:44 UTC +00:00], ["email", "rachelwarbelow@gmail.com"], ["encrypted_password", "$2a$10$xyHTgULfLNISHKlUl6Cmu.WR2SlKduoSvdqMA6JUfCZ/GSZcjW6e."], ["name", "Rachel Warbelow"], ["oauth_token", "CAADLvUvOZBr0BAIuEzL3lwajCw2ZB1ZBw8gf2M4ZCAKZAqRmWypfqCSrYiBiwz6ohBYbaMZBDeFeNJ2ZBsCPHy0k5SoxO30pNfXzPNqa1wLZBZCc0yWnImYegbCPHzIVtRDAfBAiVrV16iQKQIRrWn8I0xMuQOwUZAkyy3BZAZA3LyFqck8JH33EtaZC8ztCoIVtUB6sZD"], ["provider", "facebook"], ["uid", "6800988"], ["updated_at", Mon, 23 Dec 2013 04:17:44 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 4[0m  [["last_sign_in_at", Mon, 23 Dec 2013 04:17:44 UTC +00:00], ["current_sign_in_at", Mon, 23 Dec 2013 04:17:44 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Mon, 23 Dec 2013 04:17:44 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 370ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:17:44 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:17:44 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:44 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:44 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:17:44 -0800
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:35:29 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:36:02 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 340ms (Views: 6.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:44:55 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 20:45:06 -0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 365ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 20:45:07 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 20:45:07 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 20:45:07 -0800
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-12-22 20:45:07 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 20:45:07 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 20:45:07 -0800

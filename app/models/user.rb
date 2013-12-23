@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 	                         provider:auth.provider,
 	                         uid:auth.uid,
 	                         email:auth.info.email,
+	                         oauth_token:auth.credentials.token,
 	                         password:Devise.friendly_token[0,20]
 	                         )
 	  end
@@ -26,6 +27,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def facebook
+  	@facebook ||= Koala::Facebook::API.new(oauth_token)
+  end
+
   private 
 
   def user_params
@@ -34,7 +39,7 @@ class User < ActiveRecord::Base
     :encrypted_password, :reset_password_token, 
     :reset_password_sent_at, :remember_created_at, 
     :sign_in_count, :current_sign_in_at, :last_sign_in_at, 
-    :current_sign_in_ip, :last_sign_in_ip)
+    :current_sign_in_ip, :last_sign_in_ip, :oauth_token)
   end
 
 end
