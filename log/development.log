@@ -20,3 +20,2608 @@ Migrating to DeviseCreateUsers (20131223005118)
   [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131223005118"]]
   [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:37:00 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 565ms (Views: 532.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:37:01 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:37:01 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:37:01 -0800
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-12-22 18:37:05 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (75.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 111ms (Views: 82.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-12-22 18:37:07 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-12-22 18:37:09 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-12-22 18:37:10 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-12-22 18:37:10 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-12-22 18:37:39 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (22.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 37ms (Views: 30.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-12-22 18:37:44 -0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QslYwZ8pzPzt0zqsPvx9U01m4woi2UUBtjMDrVcqo5c=", "user"=>{"email"=>"rachelwarbelow@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36mSQL (9.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Mon, 23 Dec 2013 02:37:44 UTC +00:00], ["email", "rachelwarbelow@gmail.com"], ["encrypted_password", "$2a$10$UtcZ7PrSSEO2GYel6PBqjOVyqmxqa2LKktB6IC.ZDcuDbU495qHBa"], ["updated_at", Mon, 23 Dec 2013 02:37:44 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 1  [["last_sign_in_at", Mon, 23 Dec 2013 02:37:44 UTC +00:00], ["current_sign_in_at", Mon, 23 Dec 2013 02:37:44 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Mon, 23 Dec 2013 02:37:44 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 414ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:37:44 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:38:04 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    11: 	<p class="alert"><%= alert %></p>
+    12: 	<div id="user_nav">
+    13:     <% if user_signed_in? %>
+    14:       Logged in as <strong><%= current_user.email %></strong>.
+    15:       <%= link_to 'Edit profile', edit_user_registration_path %> |
+    16:       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    17:     <% else %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___975769646265423218_70352308122080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:38:59 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:38:59 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:38:59 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:38:59 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:38:59 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:38:59 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:39:11 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:39:11 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:39:11 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:39:11 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:39:11 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:39:11 -0800
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2013-12-22 18:39:35 -0800
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 34ms (Views: 13.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:39:59 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToUsers (20131223024142)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131223024142"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 124ms (Views: 91.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:41 -0800
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QslYwZ8pzPzt0zqsPvx9U01m4woi2UUBtjMDrVcqo5c="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:46:43 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:46:45 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:46:45 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:52:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 126ms (Views: 94.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:52:34 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:52:34 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:52:34 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:52:34 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:52:34 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:52:38 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:52:38 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:53:09 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 119ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:53:09 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:53:09 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:53:09 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:53:09 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:53:09 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:53:12 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:53:12 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCCw7RH3-epIVA_0oN38Qcr6vcEuOSAejhebfljElvd2J7d-rXiVdGkTJZg3bChmZSMJ4A74uqgSuEAvPRHY_UiJ-NnNS-hYlDkl4uBpezrbthQSloe-SqczMvH8vhOEKsaEbumn6dXLToev0qKL5vYxKoqsmq5yW4oc_DXPHpXsYHaqoExfhwugAQhXT2j6KMAIYv6xrgI42KDpuw4XSJ3yds-DQrMZR0a66pK1tNTcnLVI1KqgL260jUEzwVCCdRtafn47T9oFW1A-Oty8yLH0qfd_IK1zPvOSYFHRjuEOZF2evA_wc2eNo_k3kE9pSU&state=830253bc6939c954d3d7961227be040d86df6d097fbb1c0b" for 127.0.0.1 at 2013-12-22 18:53:19 -0800
+
+AbstractController::ActionNotFound (The action 'facebook' could not be found for Devise::OmniauthCallbacksController):
+  actionpack (4.0.1) lib/abstract_controller/base.rb:131:in `process'
+  actionpack (4.0.1) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:401:in `call_app!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:363:in `callback_phase'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:226:in `callback_call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:182:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__577627614714717305__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQAeMVN34s1dXp2QLaouP4AKa3py0LlZi2xkvwWTcpG2b44UGpxAazR6GUXAv9Vyi1PjkUP1W4CsnnGAfqWViIy3y1d0xL34Rt3gd2gOy9qUZyjQ3bYWHtSqmQwI_-FLD1vSisvMYqfQ_37VD0GaivsqyOg7jITzIKVcwkpW-UQr6MnGvOUnvqDYhCU68PfnnOnxU21yqML66PZqEcoGFX5ZbqNzeq4Myx9UaKgMFMUgb_4sfGoMM88wRcqd0dKOQUgHy-fh93JhR7Zi4xz1EMUXFHNJBfkRbCdQQ8FlA6wr6DK8ce31ogTKc1D3NcGj6Tk&state=830253bc6939c954d3d7961227be040d86df6d097fbb1c0b" for 127.0.0.1 at 2013-12-22 18:54:19 -0800
+
+ArgumentError (Invalid route name, already in use: 'new_user_session' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  config/routes.rb:57:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:54:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (43.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:54:37 -0800
+
+ArgumentError (Invalid route name, already in use: 'new_user_session' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  config/routes.rb:58:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:54:55 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:54:55 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:54:55 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:54:55 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:54:55 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:54:55 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:54:57 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:54:58 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBRsod8bHXHy39GUcoU_lDNRuo1Y2TWhF6QIuBVivYL2lPkW01nB54prVMGHPGcG8qeowqiu9pmg5dAvQm5JILeBno3vc6fZ4R9uFrNJJVjoPzrFKij5mdtmUI3vuZb1PqEu7MPnUTseMjCMzxMaJ-Ry_b79gQRING861afTD--T-3NJVgIvdSAO5skucYjpd9iRyHsP_PKx3aXzWvZYGF2GnpCadbepFlJo0cZoASaZfFxPLFTyKkYoND-QuoC-2yjaHoH0Xb04EHYvAOhmTCytO7tbYKYBqEnfc8jzVqwQKt9-Xpel-o9_QV_cHfWgxo&state=03b7de1257b78916d13b159f752a9f85afdade8918b704f5" for 127.0.0.1 at 2013-12-22 18:54:58 -0800
+
+AbstractController::ActionNotFound (The action 'facebook' could not be found for Devise::OmniauthCallbacksController):
+  actionpack (4.0.1) lib/abstract_controller/base.rb:131:in `process'
+  actionpack (4.0.1) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:401:in `call_app!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:363:in `callback_phase'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:226:in `callback_call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:182:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__577627614714717305__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 18:55:23 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 18:55:23 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 18:55:23 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 18:55:23 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 18:55:23 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 18:55:23 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:55:24 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 18:55:24 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQACL2MsN-rCWgFdYPe9HPU6IfsFYOKYmQs12sW-okGswHdKKZNCeMDWZMFveXXvLdZX3NlCtzFaNdERN2-d5NL7EvfMIUxPgX4pGr7M2xpGMz8PaU1eMtoFR5wGHxx7EG4jp7FpSGPqWHdZeNGH6JSBpMjBuYCeMgT7ZnyU4dgXG8AqWBfhHqYW0ZY6MSZ5ORNH3E4eBzt3dNIDcNHMe8GPywpEOXH_NC9LMxKTtob2itgN-tlF5jkdLPv4Zxb55EgAJs4SfE3168Zu_KejBX0GyH4i0JdtniS3nGoIXcGbNmCCGp0x728leEnwn3IbnUk&state=508f236d870abc4a6c051d36a0ccba709ed458c78583aa13" for 127.0.0.1 at 2013-12-22 18:55:24 -0800
+
+ActionController::RoutingError (uninitialized constant Users):
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:224:in `constantize'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:401:in `call_app!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:363:in `callback_phase'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:226:in `callback_call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:182:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__577627614714717305__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (64.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (96.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:03:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 72ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:03:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:03:12 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:03:12 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:03:12 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:03:12 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:03:13 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:03:14 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQAHVl-nuO0gyDnFCyY_tJMmfDlh_vQ5-kZopNW_afXodQJz9_pagxRn0xDlHN1MizcmEC6VJA1nEshGk8qeRj72HbIb1tnZYRyJPAqEcY77BRAYQYf6l-0HWHYnQ18-tYgYvv1RGfqPYmurpOZVFfKvdBBgrzmXQxCgpaCa7tLE3UuTHr6b1gMxvAOD5nXCD7U57bxLuwteTSxSZeNbXZLTI-JO8-JUs39gH_Vbde_I8Hl_u4djNrZzcsRKWmUzFreLs-IRgeCYSowUU9h8p88KNceZ8yptRiLkED0Endn30xMoZfbIgQFUTElaiHk_SfU&state=ec0bcb7b2088bdf759958d0119a5d4a19279802554170e76" for 127.0.0.1 at 2013-12-22 19:03:14 -0800
+
+ActionController::RoutingError (uninitialized constant Users):
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.1) lib/active_support/inflector/methods.rb:224:in `constantize'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.1) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:401:in `call_app!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:363:in `callback_phase'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:226:in `callback_call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:182:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__4191139339056356752__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (45.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:06:24 -0800
+
+ArgumentError (Invalid route name, already in use: 'destroy_user_session' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  config/routes.rb:4:in `block (2 levels) in <top (required)>'
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:06:47 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:06:47 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:06:47 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:06:47 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:06:47 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:06:47 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:06:48 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:06:49 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDsjNa1pH5Hrks4ztj_puMxUBr00JftMxwcRcY-HwpnzTeaBgW9tibL-3CcoRV-3nVl8tr3yhanajG9R8a2Cmw_K3y-aeXJBoYh26_xmw0u0blKUdCmd2v9yD3PQvylnAyBwoilz7qZ5d-7YpHNkW_m71bIZcf6AfuHPrUtCZQsHwBICogtMDaUJrNjW8bEhNKnQ2jdUtgvIO-nnnXnk-W1akf5xuxWow6goVExPcHvsQ6wk90KfW2rJPdji6gWQYaV6u6un4U_IK-SeGaF5ZJVgh4rvX2hTsAK0f3836jh8uo_aowXukIlYcSUcfaS6Wg&state=1734ec2c8623f150318b7fe2fc4ec910a5443fc3b58eab5f" for 127.0.0.1 at 2013-12-22 19:06:49 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDsjNa1pH5Hrks4ztj_puMxUBr00JftMxwcRcY-HwpnzTeaBgW9tibL-3CcoRV-3nVl8tr3yhanajG9R8a2Cmw_K3y-aeXJBoYh26_xmw0u0blKUdCmd2v9yD3PQvylnAyBwoilz7qZ5d-7YpHNkW_m71bIZcf6AfuHPrUtCZQsHwBICogtMDaUJrNjW8bEhNKnQ2jdUtgvIO-nnnXnk-W1akf5xuxWow6goVExPcHvsQ6wk90KfW2rJPdji6gWQYaV6u6un4U_IK-SeGaF5ZJVgh4rvX2hTsAK0f3836jh8uo_aowXukIlYcSUcfaS6Wg", "state"=>"1734ec2c8623f150318b7fe2fc4ec910a5443fc3b58eab5f"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 27ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: name):
+  app/models/user.rb:11:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:07:39 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:07:39 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:07:39 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:07:39 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:07:39 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:07:39 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:07:40 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:07:40 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBcO-eVE3FUa0-_fWEn-SiI3NSC8dfGLKwyjef7hgKz4ZZZ4Bb2Gj5aSrjUJjrgVh0nR55SeI2l9lwbMP-xjxGyedeJeEaBEmeFcYlgiUNXZD4NPHLwPLL_GR8Y8Z-7LYm8LcwY1D4eQ4m2n6V1swjQDPTXEYqpeqm4aYAysQKJoVBUUevBQj47xoMTl14gZOQPqWakhlooUR2dU0zU_c5NA6qPcLCTfLqUBJa440MdUcYes76UEFtG3nAPX_XNg-Rxcm5BVkb8ECY155CsRjo14qOJGsOc_UUmFhCrHtux1_cHtiE9IoDBgeWBQgYfry0&state=80f1171ba75288968110a545d8b56336ee10687f88ea984c" for 127.0.0.1 at 2013-12-22 19:07:41 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBcO-eVE3FUa0-_fWEn-SiI3NSC8dfGLKwyjef7hgKz4ZZZ4Bb2Gj5aSrjUJjrgVh0nR55SeI2l9lwbMP-xjxGyedeJeEaBEmeFcYlgiUNXZD4NPHLwPLL_GR8Y8Z-7LYm8LcwY1D4eQ4m2n6V1swjQDPTXEYqpeqm4aYAysQKJoVBUUevBQj47xoMTl14gZOQPqWakhlooUR2dU0zU_c5NA6qPcLCTfLqUBJa440MdUcYes76UEFtG3nAPX_XNg-Rxcm5BVkb8ECY155CsRjo14qOJGsOc_UUmFhCrHtux1_cHtiE9IoDBgeWBQgYfry0", "state"=>"80f1171ba75288968110a545d8b56336ee10687f88ea984c"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 36ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: name):
+  app/models/user.rb:13:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:09:42 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 69ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:09:42 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:09:42 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:09:42 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:09:42 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:09:42 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:09:43 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:09:43 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBS3GmBEx5KTQLUvPQXkT0Q_KurwYEIz2smA10Avqz4hUyS8FWDgIknWOsPam7E3UUlm4fujyavJ2U6twtAoOtQ5t8Kewg4uX7pNBBTJxxF8MGjMSKQXCrE-SAzD3J69zmmzivEVy9aGJ9zeKtGA0SIP8R3pXQtYz4ctO_Z0gjxqoN6oJXCeSdkXbCzbKNx0u1ROt-ZRcdE6XqcNLzmjZbj1IoTpQlXRXVQjdAHWFUqC0fiDpbVfWJYhnBmtiBdOwYafNCZYND8ZX_-4zPDyH_4fEUny-lc0lABOzpt8ENzrbxPBm4tvyD2NDHt2Q9kRhk&state=d92da5e77b82ab3234f138618c0320326f284eb8b4be6a48" for 127.0.0.1 at 2013-12-22 19:09:44 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBS3GmBEx5KTQLUvPQXkT0Q_KurwYEIz2smA10Avqz4hUyS8FWDgIknWOsPam7E3UUlm4fujyavJ2U6twtAoOtQ5t8Kewg4uX7pNBBTJxxF8MGjMSKQXCrE-SAzD3J69zmmzivEVy9aGJ9zeKtGA0SIP8R3pXQtYz4ctO_Z0gjxqoN6oJXCeSdkXbCzbKNx0u1ROt-ZRcdE6XqcNLzmjZbj1IoTpQlXRXVQjdAHWFUqC0fiDpbVfWJYhnBmtiBdOwYafNCZYND8ZX_-4zPDyH_4fEUny-lc0lABOzpt8ENzrbxPBm4tvyD2NDHt2Q9kRhk", "state"=>"d92da5e77b82ab3234f138618c0320326f284eb8b4be6a48"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 374ms (ActiveRecord: 4.0ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__581670028390570012__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:11:43 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:11:43 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:11:43 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:11:44 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:11:44 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:11:44 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:11:44 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:11:45 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDA1nDSxCwqj8oUe0EpsaABghvFwwoXj6WTReqyO3fz9UnqJXaST97d4YSCFKe56hXXgHVqIMmXTJOyEqg_c1O2TqMZ-TKWNBpSnY_iKFrt0ChunZXB8I3qdW4HUFwQfQS92iLCJPV8WYL-Uq_ab1gWx-uEbsGqU8gRdpRqWoDEP3ZaZrfK04_1ZIgGRYNX3U_qm11z7SujMWdE_jV1fR5EobfP-5e7EuLV_wSEesWHXt3V2z_ghDYlEAsK3yM99eqG2OUPGyP46hYmjkCA02vgz_MiUBUl77sRuytsHqDG3iTOhi_Pg14-JVyxI6oTulM&state=44deda9071797592e1a39098c7b3901b80292721f7d70c9d" for 127.0.0.1 at 2013-12-22 19:11:45 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDA1nDSxCwqj8oUe0EpsaABghvFwwoXj6WTReqyO3fz9UnqJXaST97d4YSCFKe56hXXgHVqIMmXTJOyEqg_c1O2TqMZ-TKWNBpSnY_iKFrt0ChunZXB8I3qdW4HUFwQfQS92iLCJPV8WYL-Uq_ab1gWx-uEbsGqU8gRdpRqWoDEP3ZaZrfK04_1ZIgGRYNX3U_qm11z7SujMWdE_jV1fR5EobfP-5e7EuLV_wSEesWHXt3V2z_ghDYlEAsK3yM99eqG2OUPGyP46hYmjkCA02vgz_MiUBUl77sRuytsHqDG3iTOhi_Pg14-JVyxI6oTulM", "state"=>"44deda9071797592e1a39098c7b3901b80292721f7d70c9d"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 356ms (ActiveRecord: 2.8ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__581670028390570012__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:12:38 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:12:38 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:12:38 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:12:38 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:12:38 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:12:38 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:12:39 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:12:40 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCRUvnYse7Z70mRXxODoVC1tpt-XcRnWZpqxOWFwkZ36rzTL6HD8y01UwWrgmlU56lg-e16l0sWD93TPO78MquRuNR6Ji2xf9ogGM5PO_XIbHquagyKiXY3JOZJpoGwf46HTI6NTKbV8_u7fHpxxOO0ijRQoCKaqmbTmUQB8v7nlENB1AnhHtAm7ACV9dN9CnqCHOWpaq7gFo0dkedIr9AtxVIIq03Bkz30uBheUcnl3kPx51t8s0hDr10aW25rcWNtvA19IqCUlCmmXZtUy-k9WFRwcbxZko61pOsM2gxnXmsNSj3vP6U3fzuk_15WQcs&state=ae3cf827d1cdc412f4faf9a33f21319ca6f80b327db684e9" for 127.0.0.1 at 2013-12-22 19:12:40 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCRUvnYse7Z70mRXxODoVC1tpt-XcRnWZpqxOWFwkZ36rzTL6HD8y01UwWrgmlU56lg-e16l0sWD93TPO78MquRuNR6Ji2xf9ogGM5PO_XIbHquagyKiXY3JOZJpoGwf46HTI6NTKbV8_u7fHpxxOO0ijRQoCKaqmbTmUQB8v7nlENB1AnhHtAm7ACV9dN9CnqCHOWpaq7gFo0dkedIr9AtxVIIq03Bkz30uBheUcnl3kPx51t8s0hDr10aW25rcWNtvA19IqCUlCmmXZtUy-k9WFRwcbxZko61pOsM2gxnXmsNSj3vP6U3fzuk_15WQcs", "state"=>"ae3cf827d1cdc412f4faf9a33f21319ca6f80b327db684e9"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 368ms (ActiveRecord: 2.9ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__581670028390570012__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:13:17 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:13:17 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:13:17 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:13:17 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:13:17 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:13:17 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:13:18 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:13:18 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBspSsnCpzG9Y3oPbzrc95aFGFTk7qpTvqzoU5GgTgpa59xxf-kZr99aJdqt9LOSxSoSn60KLwf7rHpMFrWHDwaF3M82GWXPm9iBo-ju0AEizmyNLLZcy2q3ojbM1Lu3TOOVqQIX8l7pXJOZSdrE2S-6wOGK1EV8rHQCrIACBASMoqn144dum4JZLWsXBm2lkjo0kFDuoELMqYcW52ew0ghlXwwEAGzg33X8Uk_cokJ1DrXqw9cLAZJvpFa98z40cxvzrgWWZnoB5BoyJepMqeTOYU03JFj7WfQl9LOeY0PegKjiIdLk9BqK1lfeiqFmT0&state=f497c535a3c4168983dd50e027adc3cd2f27a16c98fb4ef3" for 127.0.0.1 at 2013-12-22 19:13:18 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBspSsnCpzG9Y3oPbzrc95aFGFTk7qpTvqzoU5GgTgpa59xxf-kZr99aJdqt9LOSxSoSn60KLwf7rHpMFrWHDwaF3M82GWXPm9iBo-ju0AEizmyNLLZcy2q3ojbM1Lu3TOOVqQIX8l7pXJOZSdrE2S-6wOGK1EV8rHQCrIACBASMoqn144dum4JZLWsXBm2lkjo0kFDuoELMqYcW52ew0ghlXwwEAGzg33X8Uk_cokJ1DrXqw9cLAZJvpFa98z40cxvzrgWWZnoB5BoyJepMqeTOYU03JFj7WfQl9LOeY0PegKjiIdLk9BqK1lfeiqFmT0", "state"=>"f497c535a3c4168983dd50e027adc3cd2f27a16c98fb4ef3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 321ms (ActiveRecord: 3.2ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__581670028390570012__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.6ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQBspSsnCpzG9Y3oPbzrc95aFGFTk7qpTvqzoU5GgTgpa59xxf-kZr99aJdqt9LOSxSoSn60KLwf7rHpMFrWHDwaF3M82GWXPm9iBo-ju0AEizmyNLLZcy2q3ojbM1Lu3TOOVqQIX8l7pXJOZSdrE2S-6wOGK1EV8rHQCrIACBASMoqn144dum4JZLWsXBm2lkjo0kFDuoELMqYcW52ew0ghlXwwEAGzg33X8Uk_cokJ1DrXqw9cLAZJvpFa98z40cxvzrgWWZnoB5BoyJepMqeTOYU03JFj7WfQl9LOeY0PegKjiIdLk9BqK1lfeiqFmT0&state=f497c535a3c4168983dd50e027adc3cd2f27a16c98fb4ef3" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBspSsnCpzG9Y3oPbzrc95aFGFTk7qpTvqzoU5GgTgpa59xxf-kZr99aJdqt9LOSxSoSn60KLwf7rHpMFrWHDwaF3M82GWXPm9iBo-ju0AEizmyNLLZcy2q3ojbM1Lu3TOOVqQIX8l7pXJOZSdrE2S-6wOGK1EV8rHQCrIACBASMoqn144dum4JZLWsXBm2lkjo0kFDuoELMqYcW52ew0ghlXwwEAGzg33X8Uk_cokJ1DrXqw9cLAZJvpFa98z40cxvzrgWWZnoB5BoyJepMqeTOYU03JFj7WfQl9LOeY0PegKjiIdLk9BqK1lfeiqFmT0", "state"=>"f497c535a3c4168983dd50e027adc3cd2f27a16c98fb4ef3"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 102ms (Views: 27.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:09 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:15:12 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:15:13 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBOV7G1UZtIAIZvMEYL1ZuYxpYo7Ewc4jZzGdBWiD4fV592ygB6wQhQGAP2BSZ2YRYh9BiGPZd9Y5YXRyiQwIDKRS0cZTRFFjH58gK-s1kC9lCu3Ao6AHVqeGWPIsl2Iui5drKFKu81n6u3XycFawMA9VGVfihA0z35UjSepvauizQa1a6oueOEPRiWZPybWw2XkuQ6ffglZOv507FnbgVWqg_wVxzotIdzkv7X9DhCfwTmJ6lAP6_z15dG2KAhbzaAQuJlMzbVJNK_m7QjZhAtqjKoqNeTup6OHwDg5xEU68xlvhn-ZTMqOghaFY1fFJw&state=9a4c6f0c2d44c3b4e5d7fd67020887a8fbd0115888607016" for 127.0.0.1 at 2013-12-22 19:15:13 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBOV7G1UZtIAIZvMEYL1ZuYxpYo7Ewc4jZzGdBWiD4fV592ygB6wQhQGAP2BSZ2YRYh9BiGPZd9Y5YXRyiQwIDKRS0cZTRFFjH58gK-s1kC9lCu3Ao6AHVqeGWPIsl2Iui5drKFKu81n6u3XycFawMA9VGVfihA0z35UjSepvauizQa1a6oueOEPRiWZPybWw2XkuQ6ffglZOv507FnbgVWqg_wVxzotIdzkv7X9DhCfwTmJ6lAP6_z15dG2KAhbzaAQuJlMzbVJNK_m7QjZhAtqjKoqNeTup6OHwDg5xEU68xlvhn-ZTMqOghaFY1fFJw", "state"=>"9a4c6f0c2d44c3b4e5d7fd67020887a8fbd0115888607016"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 298ms (ActiveRecord: 1.2ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__581670028390570012__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (49.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:15:44 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:15:45 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:45 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:45 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:45 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:15:45 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:15:46 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:15:46 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDmiH3jwt4G9cKX-_KJPlpNJAXFVGQwpZ2D4XY-a1KUGGSPJC51MnCYVzQilu5cnn99ZSTNcUHicsdY4cKRbsjVO2bE4sO-7O-MPTnbKCzBoaFmOhEbBXEh8UDc9qrVuTArytVc_woNv2UhM9ArGTcf9fEjZvVIh8MTXO-HXmcK8aQuW03bGlKYRgK0FS_X56H-SAGmlONZC2mLCwi7G6f-B60j5TcXl2uNWb0rYc2TNr5hI5bjo9IAGXof45taqVAzvZLC3p96VkKYGJ-BY-56ljBnkj9DyEhYr0Ym-eSkP77ouaLQsOrBsvwgEDnDz_s&state=072d28c43272a685f23190c8f1512a7e6385a7ff720659e2" for 127.0.0.1 at 2013-12-22 19:15:47 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDmiH3jwt4G9cKX-_KJPlpNJAXFVGQwpZ2D4XY-a1KUGGSPJC51MnCYVzQilu5cnn99ZSTNcUHicsdY4cKRbsjVO2bE4sO-7O-MPTnbKCzBoaFmOhEbBXEh8UDc9qrVuTArytVc_woNv2UhM9ArGTcf9fEjZvVIh8MTXO-HXmcK8aQuW03bGlKYRgK0FS_X56H-SAGmlONZC2mLCwi7G6f-B60j5TcXl2uNWb0rYc2TNr5hI5bjo9IAGXof45taqVAzvZLC3p96VkKYGJ-BY-56ljBnkj9DyEhYr0Ym-eSkP77ouaLQsOrBsvwgEDnDz_s", "state"=>"072d28c43272a685f23190c8f1512a7e6385a7ff720659e2"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 352ms (ActiveRecord: 3.5ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__581670028390570012__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:17:26 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:17:26 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:26 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:26 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:26 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:26 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:17:28 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:17:28 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQD7BPFYFjMLUICmnudAZx8sIFstt71uPW4BYNbgdIGwTKsKnVJXF30CQYE1sBRIZaGZTpCtI0wqlMbafXK4cL_GTlhZ86IPWcevGAUU9f9PCdeN8BpBxdUQrsioqn_vMRHzf1joC7IYvSOSk_Anu-05L7JKBHE40UHQRfzxheAsNwmKeQmhLdA_Tg9berlkx-8ECvL9uyynlsc5ia8Ahc4wDauFhCr0HlqKrhopB_TFbFCg1uz-86rEXKoXj4sCPg44FtElsct7OLpC4ERygDXzAoALq1fVJ2YoxHvNc6ldA7m_1sYtCd27yKS5Z-aQsp8&state=a4970437deb51a5d230261da3154a7d4867d438a28d8b712" for 127.0.0.1 at 2013-12-22 19:17:28 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQD7BPFYFjMLUICmnudAZx8sIFstt71uPW4BYNbgdIGwTKsKnVJXF30CQYE1sBRIZaGZTpCtI0wqlMbafXK4cL_GTlhZ86IPWcevGAUU9f9PCdeN8BpBxdUQrsioqn_vMRHzf1joC7IYvSOSk_Anu-05L7JKBHE40UHQRfzxheAsNwmKeQmhLdA_Tg9berlkx-8ECvL9uyynlsc5ia8Ahc4wDauFhCr0HlqKrhopB_TFbFCg1uz-86rEXKoXj4sCPg44FtElsct7OLpC4ERygDXzAoALq1fVJ2YoxHvNc6ldA7m_1sYtCd27yKS5Z-aQsp8", "state"=>"a4970437deb51a5d230261da3154a7d4867d438a28d8b712"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 21ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: name):
+  app/models/user.rb:11:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:17:57 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:17:57 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:57 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:57 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:57 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:17:57 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:17:58 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:17:58 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDowwffGgoRe__FNU779sLE5NhKDPaNHXVoe04EQ1oNRMQBpze-zKr6p8I3DhWzXGXp013YThmQdgqpxN4rGkLTgHd4NH4tnQlCv0NAz1UT_qVDUhined2G4Czq5TFSlVQkiySg56EabvCbeqMgzHucTi_Egj8D_BP7XaUPVBUZuX1rI09UzYkjUJ2fp3RU9nXQmEYQbpCaTHFPuMVf97IDETT6q0mLaBJVI9plEtRnrjbtnY7d9e3SP6hBb7AKK54EFknsHBu2Dyv3gJIhxYdRbOAil2WISc3wWykEaA981hG-mhH8uLNeDjBIxJRM8Lc&state=b21bb05e96dbcbaa082e32147c8e2615721483a901e3d3fd" for 127.0.0.1 at 2013-12-22 19:17:58 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDowwffGgoRe__FNU779sLE5NhKDPaNHXVoe04EQ1oNRMQBpze-zKr6p8I3DhWzXGXp013YThmQdgqpxN4rGkLTgHd4NH4tnQlCv0NAz1UT_qVDUhined2G4Czq5TFSlVQkiySg56EabvCbeqMgzHucTi_Egj8D_BP7XaUPVBUZuX1rI09UzYkjUJ2fp3RU9nXQmEYQbpCaTHFPuMVf97IDETT6q0mLaBJVI9plEtRnrjbtnY7d9e3SP6hBb7AKK54EFknsHBu2Dyv3gJIhxYdRbOAil2WISc3wWykEaA981hG-mhH8uLNeDjBIxJRM8Lc", "state"=>"b21bb05e96dbcbaa082e32147c8e2615721483a901e3d3fd"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 82ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: name):
+  app/models/user.rb:11:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:18:38 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:18:38 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:38 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:38 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:38 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:38 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:18:39 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:18:39 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQA6DYW-BHuoKNMDblF7ekx3rxGlxUmQlNimHfnW-0XcD9z9EMeL5nNoDLPPbCrQ0dJJ59GkCFMVLaX-rG_RgNC0ToGZnDCIEyBimtGS6enU67S0B_qt7w2dLm4jDjpfQ3rt3iv69vVK6fbXh8sgj4MTvEUpejttcOJmI_siKSeQMnMqsvWG-ws7W_3qj_HcP3wKfLk8TZGJBUwz5PUahkhQ__85-Skyz_4eFzo_UhNQue1rA9mCleTaLtY1uVopsxN9UNOQ2DL2Ge7HVY6jvnZ4SyZZN9P7m7Uaj34bTmh_b8IBrzY1NieOBDtApMQ1fFw&state=615ceaed8349a58e5e23261b804bb380d2f2086a9f95d78e" for 127.0.0.1 at 2013-12-22 19:18:40 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA6DYW-BHuoKNMDblF7ekx3rxGlxUmQlNimHfnW-0XcD9z9EMeL5nNoDLPPbCrQ0dJJ59GkCFMVLaX-rG_RgNC0ToGZnDCIEyBimtGS6enU67S0B_qt7w2dLm4jDjpfQ3rt3iv69vVK6fbXh8sgj4MTvEUpejttcOJmI_siKSeQMnMqsvWG-ws7W_3qj_HcP3wKfLk8TZGJBUwz5PUahkhQ__85-Skyz_4eFzo_UhNQue1rA9mCleTaLtY1uVopsxN9UNOQ2DL2Ge7HVY6jvnZ4SyZZN9P7m7Uaj34bTmh_b8IBrzY1NieOBDtApMQ1fFw", "state"=>"615ceaed8349a58e5e23261b804bb380d2f2086a9f95d78e"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 25ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: name):
+  app/models/user.rb:11:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:18:48 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:18:49 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:49 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:49 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:49 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:18:49 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:18:49 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:18:50 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQAS6waGvWkqvTzBQhfWBE_NbNnyDwHhRtKtOO79Eblcd6xwXkz25GtOSESvxjZar0jSzN4QOgnfhFQPo4FwIQyvxPDYEUPuSzuVJ4dSSa_IgNJ8GUhHHlDE8IqpWXrZ2OsbNBkFqkseiSVY4ZCeZq_cBPekxeLMBvTYdT4Mij11PfKN5WuUR-65ql59YZXyW_yvvZCiDXE5_jkEe68aqmWiqlxZWwjN8A_QW_JhqNDKAe9cJTVhOMYyaBWDicrTcAAKqsm05blqtwZRciFCO6VlLWyOqKSR6EXhSkder4j9bDQdYyifjXssmAYPKkCHSuM&state=79fbf77e9d165c3d8d61ebd8a1529d84ce7fe1c1f2ad3589" for 127.0.0.1 at 2013-12-22 19:18:50 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAS6waGvWkqvTzBQhfWBE_NbNnyDwHhRtKtOO79Eblcd6xwXkz25GtOSESvxjZar0jSzN4QOgnfhFQPo4FwIQyvxPDYEUPuSzuVJ4dSSa_IgNJ8GUhHHlDE8IqpWXrZ2OsbNBkFqkseiSVY4ZCeZq_cBPekxeLMBvTYdT4Mij11PfKN5WuUR-65ql59YZXyW_yvvZCiDXE5_jkEe68aqmWiqlxZWwjN8A_QW_JhqNDKAe9cJTVhOMYyaBWDicrTcAAKqsm05blqtwZRciFCO6VlLWyOqKSR6EXhSkder4j9bDQdYyifjXssmAYPKkCHSuM", "state"=>"79fbf77e9d165c3d8d61ebd8a1529d84ce7fe1c1f2ad3589"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 21ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: name):
+  app/models/user.rb:11:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameToUsers (20131223031955)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "name" character varying(255)[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131223031955"]]
+  [1m[36m (71.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:20:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 110ms (Views: 76.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:20:11 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:11 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:11 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:11 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:11 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:20:17 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:20:17 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDN6JhbNd-yJZzo3UXajWZosrUhPTLJlPbyXi_lb97rCDuKD6rODjhgASCmC_evcAcL4okbBH741gpXKdYeLdHY7k8LNcIslHTiaXZ6Ir7mEpgT-a944cMp-drC6EowKEKGW3h8aeLRwYTs8II83Rx63KQj-Q35S0CkeKLXUqFQ3UR8r8-ztYDI9zc6DGU8QrcScBQW1At8qHf_i7t6RYrwfevnAyOwQp8KXFDg_zsQRNOqn9BRxi5GjeexE_qoLSYzvUKYfoex4Ar6wf11kvgrM3KbvsLnBXJmXJ-MFdu90bn5R6uvvAr8MSJtGhCKQCg&state=49392a79f6b033a4fdfe2a1b4a7816e89227cb8dcef773a0" for 127.0.0.1 at 2013-12-22 19:20:17 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDN6JhbNd-yJZzo3UXajWZosrUhPTLJlPbyXi_lb97rCDuKD6rODjhgASCmC_evcAcL4okbBH741gpXKdYeLdHY7k8LNcIslHTiaXZ6Ir7mEpgT-a944cMp-drC6EowKEKGW3h8aeLRwYTs8II83Rx63KQj-Q35S0CkeKLXUqFQ3UR8r8-ztYDI9zc6DGU8QrcScBQW1At8qHf_i7t6RYrwfevnAyOwQp8KXFDg_zsQRNOqn9BRxi5GjeexE_qoLSYzvUKYfoex4Ar6wf11kvgrM3KbvsLnBXJmXJ-MFdu90bn5R6uvvAr8MSJtGhCKQCg", "state"=>"49392a79f6b033a4fdfe2a1b4a7816e89227cb8dcef773a0"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 399ms (ActiveRecord: 3.6ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__3640503395997270848__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:20:35 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:20:35 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:35 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:35 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:35 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:20:35 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:20:36 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:20:36 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBdCJmbvOGLwRz9VPLuRt0CQHUNLT0W4R_IGvzziOt4XAOlF6eK--OM0P4wfhTbOPcxCCiIQRWmrjhmeWKHkTNfRiQGKT3PsvE-pqdNfIFRghQrApbFDc1AwXYIJWGRQM1n_mOSRBkMAMGWlI81svuF2HqxuceQvMZi45F2qRyuH656Ams49nVDweYBB_URYmSv8BYxeN1Z3vbFA-bLmxl5ZSEKzjlQ4vKzD3J8cTnOMhrrSGubbOXEj_kkn8Vkm9IgDhNOSAoX3zMTM30x8INrtygatuwCgRiXGPWjQIWcPtNzSoSUU6Zq5V87eBwCLIo&state=bb3c3000f1afb8fa32b9555eb58829a8d67100dfe15ef7ef" for 127.0.0.1 at 2013-12-22 19:20:36 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBdCJmbvOGLwRz9VPLuRt0CQHUNLT0W4R_IGvzziOt4XAOlF6eK--OM0P4wfhTbOPcxCCiIQRWmrjhmeWKHkTNfRiQGKT3PsvE-pqdNfIFRghQrApbFDc1AwXYIJWGRQM1n_mOSRBkMAMGWlI81svuF2HqxuceQvMZi45F2qRyuH656Ams49nVDweYBB_URYmSv8BYxeN1Z3vbFA-bLmxl5ZSEKzjlQ4vKzD3J8cTnOMhrrSGubbOXEj_kkn8Vkm9IgDhNOSAoX3zMTM30x8INrtygatuwCgRiXGPWjQIWcPtNzSoSUU6Zq5V87eBwCLIo", "state"=>"bb3c3000f1afb8fa32b9555eb58829a8d67100dfe15ef7ef"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 404ms (ActiveRecord: 3.1ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__3640503395997270848__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:21:03 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:21:03 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:21:03 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:21:03 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:21:03 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:21:03 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:21:04 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:21:04 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCA0FY9JfUA5ufdTAlq3foBjOWJGt1q9Ll5roHgfvgTJOqGdWc6F0o_NNCDak7xF0PJJveh0IahWZfz5uOfJDiYqOAZNOW6kzpVlkKBjPAfx5qeSGgogD37QvwAzaJbrH1vsHv3RhC_JN5Z-c_7GtMnpFkV8vNgIBlUaucy2VHN6rwGDJ7Pod9H-A0FZ-Z2PFcOlwLn7IC-qur9UGDhXzJIqt9xSD-isBw8jG5cqh944aPzwgeUe8ZR-lHNa8abM4rU4P2jQbuW_uH8y7gUAlRfi83pjY7L93zANPbkz9i6nlTIM90ZXycxjmVXMG9XmlY&state=5db5d0807f7b66cf1123ab8e29545992bcb35b4120627125" for 127.0.0.1 at 2013-12-22 19:21:04 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCA0FY9JfUA5ufdTAlq3foBjOWJGt1q9Ll5roHgfvgTJOqGdWc6F0o_NNCDak7xF0PJJveh0IahWZfz5uOfJDiYqOAZNOW6kzpVlkKBjPAfx5qeSGgogD37QvwAzaJbrH1vsHv3RhC_JN5Z-c_7GtMnpFkV8vNgIBlUaucy2VHN6rwGDJ7Pod9H-A0FZ-Z2PFcOlwLn7IC-qur9UGDhXzJIqt9xSD-isBw8jG5cqh944aPzwgeUe8ZR-lHNa8abM4rU4P2jQbuW_uH8y7gUAlRfi83pjY7L93zANPbkz9i6nlTIM90ZXycxjmVXMG9XmlY", "state"=>"5db5d0807f7b66cf1123ab8e29545992bcb35b4120627125"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 329ms (ActiveRecord: 2.6ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__3640503395997270848__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:29:06 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+PG::UndefinedTable: ERROR:  relation "sessions" does not exist
+LINE 5:                WHERE a.attrelid = '"sessions"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"sessions"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 83ms
+
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "sessions" does not exist
+LINE 5:                WHERE a.attrelid = '"sessions"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"sessions"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+    4:   <title>Harmonyhub</title>
+    5:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    6:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+   10: 	<p class="notice"><%= notice %></p>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1469644664029307166_70317659939400'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:29:29 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 117ms (Views: 87.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:29:29 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:29:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:29:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:29:29 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:29:29 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:29:30 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:29:31 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBvlCjnk3ND7zH7YDQ0Tsi6AdTWa5JGSkD7bKs7GM8lPrjpTb_xOV3SR6NmwG-5m9sNNqce_AOVCX5SQX8bacIs1lfqjfI6pj95aWDo83LEqkPJsFTlP7Dr33C_HcPRyAPH2-_WygcPAipoXhoe87-N4-d_yYV37FWsSdfW7n2cXbqKpcgdVsC0qS9PWGBE3vrH8UgKA7_Wum-flbUIqvHV2j6tvKHAfvDlvnyYsmqfB_kPVc8mSFgDgKjuDrVIwFgJD23ohphWsFlK-gKB0iiJ4SmCMpVL3zPdPxEgyFmS0JbkHsdnhaiQ3M5ovRHJNv4&state=72140db760e31d24c6818a0cb97e09c2a921bc2e4289ffb0" for 127.0.0.1 at 2013-12-22 19:29:32 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBvlCjnk3ND7zH7YDQ0Tsi6AdTWa5JGSkD7bKs7GM8lPrjpTb_xOV3SR6NmwG-5m9sNNqce_AOVCX5SQX8bacIs1lfqjfI6pj95aWDo83LEqkPJsFTlP7Dr33C_HcPRyAPH2-_WygcPAipoXhoe87-N4-d_yYV37FWsSdfW7n2cXbqKpcgdVsC0qS9PWGBE3vrH8UgKA7_Wum-flbUIqvHV2j6tvKHAfvDlvnyYsmqfB_kPVc8mSFgDgKjuDrVIwFgJD23ohphWsFlK-gKB0iiJ4SmCMpVL3zPdPxEgyFmS0JbkHsdnhaiQ3M5ovRHJNv4", "state"=>"72140db760e31d24c6818a0cb97e09c2a921bc2e4289ffb0"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 358ms (ActiveRecord: 3.7ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__4119637093414299680__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (70.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:31:13 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 111ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:31:14 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:31:14 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:31:14 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:31:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:31:14 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:31:15 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:31:15 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCkiBa-Y9CJUOnD-YB0cGKRtNpmFVtRagO6bz5lxbKSOartwsDvgVGcHVVK1xI3w6qiQxjhmbH03i_Rda5uilovlkINrbwkXtMw4Rd5ml7aezL06OZpO8vYB13sgdD_rJzGPfc2bEwChUQEdVBIKiL1Ijv2PftwtNTcP1ZZlJWaBIHt90R7L26vxBZ3jFtMOuxaspNr7FP4rbA6GleR3q26qCPxw7CfgxBAxJrfeQWUoJEXxlS4_tWeq7HZVe4ORS_rv8hTMgfvkqVia4_0sgvD8v6rsLDApWWRQw0THUDliVg26Ufrazq31sO_nBen6tA&state=fbb3ea8d90e4bd9de8271c081f34d8a95ad17a2fddb015b8" for 127.0.0.1 at 2013-12-22 19:31:15 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCkiBa-Y9CJUOnD-YB0cGKRtNpmFVtRagO6bz5lxbKSOartwsDvgVGcHVVK1xI3w6qiQxjhmbH03i_Rda5uilovlkINrbwkXtMw4Rd5ml7aezL06OZpO8vYB13sgdD_rJzGPfc2bEwChUQEdVBIKiL1Ijv2PftwtNTcP1ZZlJWaBIHt90R7L26vxBZ3jFtMOuxaspNr7FP4rbA6GleR3q26qCPxw7CfgxBAxJrfeQWUoJEXxlS4_tWeq7HZVe4ORS_rv8hTMgfvkqVia4_0sgvD8v6rsLDApWWRQw0THUDliVg26Ufrazq31sO_nBen6tA", "state"=>"fbb3ea8d90e4bd9de8271c081f34d8a95ad17a2fddb015b8"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 390ms (ActiveRecord: 4.2ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__1509088742196708727__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (71.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:32:52 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:32:52 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:32:52 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:32:52 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:32:52 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:32:52 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:32:55 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:32:55 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCOM7DOdzNStp0uXLGpJY_ZuQIi5mDUDEGOr00TwHw1PqCpSaK9VvSV1TLklhMN0atVRw9aTDXT8QoGlqJVTeHMUBTNDmQN10sCYyGNUaFZ3uC1F6l3vbbAPWpyYINIbXP5twUQqg3B6AO5GMfL55BmjIIl0ecxhF-AJ9_SpWEspdltjmfelGFA3cgcY5EacGF6l0c6_dcErlxDFDyWve4MPunM1SkKCqTFoozHSn0WJd0gxuwCiXEW4iDVxX55MnRrjPUwTkuoHN24hh-w1WWFkjlTAnkssSoE8aVx5PGkRmR5Guo6CKgweXh7fTIySpg&state=583ecd1de13cae7ec93ff0d7521bbcb47174de55553bc9b4" for 127.0.0.1 at 2013-12-22 19:32:55 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCOM7DOdzNStp0uXLGpJY_ZuQIi5mDUDEGOr00TwHw1PqCpSaK9VvSV1TLklhMN0atVRw9aTDXT8QoGlqJVTeHMUBTNDmQN10sCYyGNUaFZ3uC1F6l3vbbAPWpyYINIbXP5twUQqg3B6AO5GMfL55BmjIIl0ecxhF-AJ9_SpWEspdltjmfelGFA3cgcY5EacGF6l0c6_dcErlxDFDyWve4MPunM1SkKCqTFoozHSn0WJd0gxuwCiXEW4iDVxX55MnRrjPUwTkuoHN24hh-w1WWFkjlTAnkssSoE8aVx5PGkRmR5Guo6CKgweXh7fTIySpg", "state"=>"583ecd1de13cae7ec93ff0d7521bbcb47174de55553bc9b4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 371ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-12-22 19:32:56 -0800
+Processing by Devise::RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/user.rb:24:in `block in new_with_session'
+  app/models/user.rb:23:in `tap'
+  app/models/user.rb:23:in `new_with_session'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:35:33 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:35:33 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:35:33 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:35:33 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:35:33 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:35:33 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:35:35 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:35:35 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQAgnTWFK3hc_6DwlwvheM-Nj_TrYIrXfFuFJAS3V5cIbV1XzerjxQ-ShqUDlGgyxVVLIQQbnUfybX_c5jW5cBRAWtRqw5jHB0lhmfyru8SddSoFzD53PxGoPkDuusMkEdzWSSmdm8U3RlSCWQBM6rlhP9U9TEePK6U2gsnS3Qghb_ni1iNAPPKmFVP3hNFnWmpwE1PsfLe58QfdUT0vbzeZRa3zomeoaqtwYIuC8uBtR43cs8IKKnjN23TQYEIR-FubhM2n3J1Bmv4yWoLSDoDALeBU-JEj3PKVsa9u5JWzQIqTYd1ere0E-Gwx__YUqG8&state=1232d4a2f586d0c244740531a3ec87e5b9968fa3f9f0ba68" for 127.0.0.1 at 2013-12-22 19:35:36 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAgnTWFK3hc_6DwlwvheM-Nj_TrYIrXfFuFJAS3V5cIbV1XzerjxQ-ShqUDlGgyxVVLIQQbnUfybX_c5jW5cBRAWtRqw5jHB0lhmfyru8SddSoFzD53PxGoPkDuusMkEdzWSSmdm8U3RlSCWQBM6rlhP9U9TEePK6U2gsnS3Qghb_ni1iNAPPKmFVP3hNFnWmpwE1PsfLe58QfdUT0vbzeZRa3zomeoaqtwYIuC8uBtR43cs8IKKnjN23TQYEIR-FubhM2n3J1Bmv4yWoLSDoDALeBU-JEj3PKVsa9u5JWzQIqTYd1ere0E-Gwx__YUqG8", "state"=>"1232d4a2f586d0c244740531a3ec87e5b9968fa3f9f0ba68"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 324ms (ActiveRecord: 3.0ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__1509088742196708727__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:36:01 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:36:01 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:36:01 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:36:01 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:36:01 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:36:01 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:36:02 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:36:03 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQCoaAyZ8gPSZOAFsMDsI0mvZfIjehtW47RCai9vhSfNwWeUVvr1vuKsqQ14nnBL7Dtjtglsyd6-0gMYYc3qddIz2FV8CbmlEk5wrBTtqaXE_kWpAgLmMQChZpGe5wR49NZQbR7PyXW3a-HqU7hGvgNhVmuKOWKNBQ_M1Y1uHU_9D5rLBz1AcSbWUly8BqEdWz3zpxaKUsRkrWnP06Bw1VA0pCy5nRwNtXOXwnI9HDOaQ4udXZHw8JMs2NwsLRRrHvlNcYQheg7yP9s8FvGFGCI0O0AMZibZIqcOpU-bCCEvrGlGBYwx2ux35Uamf_c41S0&state=4b11ab8dce4969e85fabf6322c4a949abf2468111255347a" for 127.0.0.1 at 2013-12-22 19:36:03 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCoaAyZ8gPSZOAFsMDsI0mvZfIjehtW47RCai9vhSfNwWeUVvr1vuKsqQ14nnBL7Dtjtglsyd6-0gMYYc3qddIz2FV8CbmlEk5wrBTtqaXE_kWpAgLmMQChZpGe5wR49NZQbR7PyXW3a-HqU7hGvgNhVmuKOWKNBQ_M1Y1uHU_9D5rLBz1AcSbWUly8BqEdWz3zpxaKUsRkrWnP06Bw1VA0pCy5nRwNtXOXwnI9HDOaQ4udXZHw8JMs2NwsLRRrHvlNcYQheg7yP9s8FvGFGCI0O0AMZibZIqcOpU-bCCEvrGlGBYwx2ux35Uamf_c41S0", "state"=>"4b11ab8dce4969e85fabf6322c4a949abf2468111255347a"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 351ms (ActiveRecord: 2.6ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__1509088742196708727__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:37:13 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:37:13 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:37:13 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:37:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:37:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:37:13 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:37:15 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:37:15 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQA23KIjK52sm80u0eCu3UtyvZFc6z9ydAO5KruRiPNPriam0Ovqgk7lSv6WwX7X83_OXtkmEmviCb-5V_ToWiX64K3p3mYkZ63J8UlZrN4Mi8SbdPeqlZHPiFyHQmv9GaeKORLJcqHkUOeAV3TMY_AGMkXcPbJFxWdlI8uNfVndZHHFklwjdQvFHoMJ4fANC-3zzt3c0M-pXd8EcOCfqz3XnzQQbmmxKzRwMIv0_Sqt7ZV2Rinuk4z-DzC5ykf-9jH6MWw8-zekBSBMR4ZDo1r-Fcayy5Q_HDm6YtADmLbl1CjoYVbSeXkkhb3Vhq_b6PI&state=8d711ebe1d57b0b2ce381201e418ffe7930b89ee496a06a5" for 127.0.0.1 at 2013-12-22 19:37:15 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA23KIjK52sm80u0eCu3UtyvZFc6z9ydAO5KruRiPNPriam0Ovqgk7lSv6WwX7X83_OXtkmEmviCb-5V_ToWiX64K3p3mYkZ63J8UlZrN4Mi8SbdPeqlZHPiFyHQmv9GaeKORLJcqHkUOeAV3TMY_AGMkXcPbJFxWdlI8uNfVndZHHFklwjdQvFHoMJ4fANC-3zzt3c0M-pXd8EcOCfqz3XnzQQbmmxKzRwMIv0_Sqt7ZV2Rinuk4z-DzC5ykf-9jH6MWw8-zekBSBMR4ZDo1r-Fcayy5Q_HDm6YtADmLbl1CjoYVbSeXkkhb3Vhq_b6PI", "state"=>"8d711ebe1d57b0b2ce381201e418ffe7930b89ee496a06a5"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 362ms (ActiveRecord: 3.4ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__1509088742196708727__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:38:03 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:38:03 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:38:03 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:38:03 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:38:03 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:38:03 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:38:05 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:38:05 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBYMKTZD4MgvnkvCoMQT0PZRT6ut9SfjWriYTBQo86euVs-8aDSI4nnZUD-kasekgUVpsahDmPw8p6e8yPvynX79M34MHH4RzNbul-UpkoVVMZm2GkXkFwjeyr_b6Xne7neMCPcs_0QRw0VlpVSg2Ud2GpO_-EjLrb_jtN6tkPignYIRqlQClqrR8VOcT_gu3qPRnoQf8zlMGWdTgSKYO2QKa0FWYEbIyNvJbuddfXtDpxqbrPRnbC0d087K3XeoCsN2NAuVjMhqTA9Xg9B_lm40YIWIODVmIeZKkuwHgdivUByu4hcpuq__tv2O7Xb5P0&state=00c9da3f6e13cfcbe617f81d0b077bfaa9727d1bdd19d18d" for 127.0.0.1 at 2013-12-22 19:38:05 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBYMKTZD4MgvnkvCoMQT0PZRT6ut9SfjWriYTBQo86euVs-8aDSI4nnZUD-kasekgUVpsahDmPw8p6e8yPvynX79M34MHH4RzNbul-UpkoVVMZm2GkXkFwjeyr_b6Xne7neMCPcs_0QRw0VlpVSg2Ud2GpO_-EjLrb_jtN6tkPignYIRqlQClqrR8VOcT_gu3qPRnoQf8zlMGWdTgSKYO2QKa0FWYEbIyNvJbuddfXtDpxqbrPRnbC0d087K3XeoCsN2NAuVjMhqTA9Xg9B_lm40YIWIODVmIeZKkuwHgdivUByu4hcpuq__tv2O7Xb5P0", "state"=>"00c9da3f6e13cfcbe617f81d0b077bfaa9727d1bdd19d18d"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 374ms (ActiveRecord: 3.0ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__1509088742196708727__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:39:31 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:39:31 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:39:31 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:39:31 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:39:31 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:39:31 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:39:38 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:39:38 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDjgbLfzeXpqMsVJiaSrB6nfsnwlSakPlYjx3xqkt6IRlDeZwqpA1iYyK9F6nct1nnLCQtbnkmuTvnUYzFRpfVFaZ4KBjCB8z00mGWRcFZeXE1xTmYJpakE-gh8iGmzbCABCFgjl96JS6dZXmyAFYrnAJWuv-dvCec7ClL_sJPKscWFIk_fxZd-BKy7uOEXcHOXl-I0ADhhXGLsgY4fzv_CyUsWGY5e-HtRr1SUZrl6rxi_8G8rP7pTRr4Ia3VLeFvUzXxhWYBXPBAbp9A2UQK19Tkm_M12VYFxkNleP6e_1bTNnl7zbcfnBYhN5pYwtG4&state=62fe3e0a2f6984daa436fd704d0d22ed64f781a106fb2cbc" for 127.0.0.1 at 2013-12-22 19:39:39 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDjgbLfzeXpqMsVJiaSrB6nfsnwlSakPlYjx3xqkt6IRlDeZwqpA1iYyK9F6nct1nnLCQtbnkmuTvnUYzFRpfVFaZ4KBjCB8z00mGWRcFZeXE1xTmYJpakE-gh8iGmzbCABCFgjl96JS6dZXmyAFYrnAJWuv-dvCec7ClL_sJPKscWFIk_fxZd-BKy7uOEXcHOXl-I0ADhhXGLsgY4fzv_CyUsWGY5e-HtRr1SUZrl6rxi_8G8rP7pTRr4Ia3VLeFvUzXxhWYBXPBAbp9A2UQK19Tkm_M12VYFxkNleP6e_1bTNnl7zbcfnBYhN5pYwtG4", "state"=>"62fe3e0a2f6984daa436fd704d0d22ed64f781a106fb2cbc"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 376ms (ActiveRecord: 2.7ms)
+
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:455:in `[]='
+  actionpack (4.0.1) lib/action_dispatch/middleware/session/cookie_store.rb:109:in `set_cookie'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:350:in `commit_session'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__1509088742196708727__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:40:26 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:40:26 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:26 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:26 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:26 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:26 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:40:28 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:40:28 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBLBJzKBll8aBSnSM_uio3RQWvm6uCLd6jWzQ2KZCERTLl-NrUz963tiG0wIzbI0lTgmr8AVKv0iZzpTfGHVI-v0BFJhj2VCVyOE5JXjr-JTya1AhMUIW4UI5VTZWBZw1XX_lyP0TJSb6ztHMDTHLiC3cKVvVEc_wd5jDLQkBET7LhbbvVqdi9DEqEwa2wElf_Avd4J6c-S2xp7bx-VxVj5BI4X_pbAi-Fmx7d3ZcgYPZTwyDOJGZlb9k5xAZB4RXxBC5eopa_EIQn-4RQFT12IaiDJ9Mb8bc-GBT8xLEk5dwucLvyZ9uoPAodkOsYN20k&state=ba846f54440d2dfe6eb81318d40e8ecbd835e551ab8d1308" for 127.0.0.1 at 2013-12-22 19:40:29 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBLBJzKBll8aBSnSM_uio3RQWvm6uCLd6jWzQ2KZCERTLl-NrUz963tiG0wIzbI0lTgmr8AVKv0iZzpTfGHVI-v0BFJhj2VCVyOE5JXjr-JTya1AhMUIW4UI5VTZWBZw1XX_lyP0TJSb6ztHMDTHLiC3cKVvVEc_wd5jDLQkBET7LhbbvVqdi9DEqEwa2wElf_Avd4J6c-S2xp7bx-VxVj5BI4X_pbAi-Fmx7d3ZcgYPZTwyDOJGZlb9k5xAZB4RXxBC5eopa_EIQn-4RQFT12IaiDJ9Mb8bc-GBT8xLEk5dwucLvyZ9uoPAodkOsYN20k", "state"=>"ba846f54440d2dfe6eb81318d40e8ecbd835e551ab8d1308"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 372ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-12-22 19:40:30 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (48.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:40:30 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:30 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:30 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:30 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:40:30 -0800
+  [1m[36mUser Load (3.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:42:29 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:42:30 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:30 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:30 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:30 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:30 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:42:30 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2013-12-22 19:42:31 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQA5QLzRcNxRiloKoiaxE0udk9zZ49r7Q8OOyuC8FgZX9XxTvXmV5yCiAYCSiNClcpRm61QLgjHneUWUiPoVQmB5jSI4ElhimpHO_fIWEEPBNrvZU4WiRhZrQmvCD6HdnRir9rd88aAztyTbeoZhqRlQ25N6cl0QTQ-3UwkyStA2vdG2yCnD0r4hu5enN8YdaLC2ZXwRT8givk_gYH6dB60XQzkjjlrOEP5T5alzThkP-LKoSaxMCaZeMbTndI7Z1ajj45YNLZgJiQenNcDN4X6plb8O7UFGY7hMU_CK7_k95FsReedwP9fpCw999u-tujs&state=6f4ea6483459d9624128049f662a961d279ee4648728fa05" for 127.0.0.1 at 2013-12-22 19:42:31 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA5QLzRcNxRiloKoiaxE0udk9zZ49r7Q8OOyuC8FgZX9XxTvXmV5yCiAYCSiNClcpRm61QLgjHneUWUiPoVQmB5jSI4ElhimpHO_fIWEEPBNrvZU4WiRhZrQmvCD6HdnRir9rd88aAztyTbeoZhqRlQ25N6cl0QTQ-3UwkyStA2vdG2yCnD0r4hu5enN8YdaLC2ZXwRT8givk_gYH6dB60XQzkjjlrOEP5T5alzThkP-LKoSaxMCaZeMbTndI7Z1ajj45YNLZgJiQenNcDN4X6plb8O7UFGY7hMU_CK7_k95FsReedwP9fpCw999u-tujs", "state"=>"6f4ea6483459d9624128049f662a961d279ee4648728fa05"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '6800988' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'rachelwarbelow@gmail.com' LIMIT 1
+  [1m[36mSQL (9.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "provider", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Mon, 23 Dec 2013 03:42:32 UTC +00:00], ["email", "rachelwarbelow@gmail.com"], ["encrypted_password", "$2a$10$ozmc.AzuoRcJFwQuMNGrnO.gSzR/kY74R1sGg1rYBP95E3hrqoajy"], ["name", "Rachel Warbelow"], ["provider", "facebook"], ["uid", "6800988"], ["updated_at", Mon, 23 Dec 2013 03:42:32 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 2  [["last_sign_in_at", Mon, 23 Dec 2013 03:42:32 UTC +00:00], ["current_sign_in_at", Mon, 23 Dec 2013 03:42:32 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Mon, 23 Dec 2013 03:42:32 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 389ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-22 19:42:32 -0800
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
