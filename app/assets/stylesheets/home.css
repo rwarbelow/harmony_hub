@@ -1,0 +1,82 @@
+.nav-buttons {
+	padding: 10px;
+}
+
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:28px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	width: 200px;
+	text-align: center;
+	margin-right: 38px;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:5px;
+}
+
+.orange {
+	background-color:#e67e22;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #d35333;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:28px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #944009;
+	width: 200px;
+	text-align: center;
+	margin-right: 38px;
+}
+.orange:hover {
+	background-color:#c26023;
+}
+.orange:active {
+	position:relative;
+	top:5px;
+}
+
+.blue {
+	background-color:#3498db;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #2b57c9;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:28px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #0a0a94;
+	width: 200px;
+	text-align: center;
+}
+.blue:hover {
+	background-color:#2980b9;
+}
+.blue:active {
+	position:relative;
+	top:5px;
+}
+
+

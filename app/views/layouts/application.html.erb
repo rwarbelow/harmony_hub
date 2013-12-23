@@ -7,27 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div>
-		<%= image_tag("logo.png") %>
+	<div class="container">
+		<div class="wrapper">
+			<div class="logo">
+				<%= link_to(image_tag("logo.png", width: "600"), root_path) %>
+			</div>
+			<div class="user_info">
+				<% if user_signed_in? %>
+				<div>
+		      <strong><%= current_user.name[0..20] %></strong>
+	      </div>
+	      <div>
+		      <%= link_to 'Edit profile', edit_user_registration_path %> |
+		      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+		    </div>
+	    </div>
+	    <div class="profile_box">
+	    	<%= link_to(image_tag(@pic, :class => "profile_picture"), edit_user_registration_path(current_user)) %>
+	    </div>
+	    <div class="sign_in">
+		    <% else %>
+			    <ul>
+			      <li><%= link_to image_tag("facebook_join.png", width: "150"), user_omniauth_authorize_path(:facebook) %></li>
+		      </ul>
+		    <% end %>
+			</div>
+		</div>
+	<div style="background-color:#2c3e50;font-size:4px;margin-bottom:30px">&nbsp;</div>
+
+	  <% flash.each do |name, msg| %>
+	    <%= content_tag :div, msg, id: "flash_#{name}" %>
+	  <% end %>
+		<%= yield %>
 	</div>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	<div id="user_nav">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> |
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
-  </div>
-
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, id: "flash_#{name}" %>
-  <% end %>
-<%= yield %>
-
 </body>
 </html>

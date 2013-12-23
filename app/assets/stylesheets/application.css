@@ -14,4 +14,47 @@
 
 body {
 	background-color: #ecf0f1;
+	font-family: helvetica;
+}
+
+.wrapper {
+	overflow: hidden;
+}
+
+.container {
+	width: 900px;
+	margin: 0 auto;
+}
+
+.profile_picture {
+	border-radius: 5px;
+	border: 3px solid #34495e;
+	height: 70px;
+	float: right;
+	margin-top: 20px;
+}
+
+.profile_box {
+	float: right;
+
+}
+
+.user_info {
+	float: left;
+	margin-left:40px;
+	margin-top:20px;
+}
+
+.sign_in {
+	float: right;
+}
+
+li {
+		list-style-type: none;
+
+}
+
+.logo {
+	float: left;
+
 }
